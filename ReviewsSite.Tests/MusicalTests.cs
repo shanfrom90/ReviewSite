@@ -11,7 +11,7 @@ namespace ReviewsSite.Tests
         Musical sut;
        public MusicalTests()
         { 
-           sut = new Musical(22,"Wicked", "drama");
+           sut = new Musical(22,"Wicked", "drama", "amazing!", 5);
         }
 
         [Fact]
@@ -30,11 +30,23 @@ namespace ReviewsSite.Tests
         }
 
         [Fact]
-        public void MusicalConstructer_Sets_Genre_On_MusicalModel()
+        public void MusicalConstructor_Sets_Genre_On_MusicalModel()
         {
             string result = sut.Genre;
             Assert.Equal("drama", result);
         }
 
+        [Fact]
+        public void MusicalConstructor_Sets_Description__On_MusicalModel()
+        {
+            string result = sut.Description;
+            Assert.Equal("amazing!", result);
+        }
+        [Fact]
+        public void MusicalConstructor_Sets_Rating_On_MusicalModel()
+        {
+            int result = sut.Rating;
+            Assert.Equal(5, result);
+        }
     }
 }

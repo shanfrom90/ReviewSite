@@ -10,16 +10,20 @@ namespace ReviewsSite.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Genre { get; set; }
+        public string Description { get; set; }
+        public int Rating { get; set; }
 
         public Musical()
         {
 
         }
-        public Musical(int id, string title, string genre)
+        public Musical(int id, string title, string genre, string description, int rating)
         {
             Id = id;
             Title = title;
             Genre = genre;
+            Description = description;
+            Rating = rating;
         }
     }
    
