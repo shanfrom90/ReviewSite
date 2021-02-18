@@ -11,7 +11,7 @@ namespace ReviewsSite.Tests
         Musical sut;
        public MusicalTests()
         { 
-           sut = new Musical(22,"Wicked", "drama", "amazing!", 5);
+           sut = new Musical(22,"Wicked", "drama", "amazing!", 5, "It was a non-stop thrill-ride!!!");
         }
 
         [Fact]
@@ -47,6 +47,12 @@ namespace ReviewsSite.Tests
         {
             int result = sut.Rating;
             Assert.Equal(5, result);
+        }
+        [Fact]
+        public void MusicalConstructor_Sets_Comment_On_MusicalModel()
+        {
+            string result = sut.Comment;
+            Assert.Equal("It was a non-stop thrill-ride!!!", result);
         }
     }
 }

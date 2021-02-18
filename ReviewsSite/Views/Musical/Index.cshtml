@@ -1,4 +1,5 @@
-﻿
+﻿@model ReviewsSite.Models.Musical
+
 @{
     Layout = null;
 }
@@ -14,6 +15,18 @@
 <body>
     <h1>Welcome to the Musical Theatre Review Site!</h1>
     <p>This is the one-stop site for all of your musical theatre nonsense!</p>
+    <h2>@Model.Title</h2>
+    <ul>
+        <li>Genre: @Model.Genre</li>
+        <li>Description: @Model.Description</li>
+        <li>Star rating: @Model.Rating</li>
+        <li>Review: @Model.Comment</li>
+    </ul>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
     <h2>Our Reviews</h2>
         <section>
             <ul>

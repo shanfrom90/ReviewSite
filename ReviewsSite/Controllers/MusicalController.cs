@@ -9,7 +9,7 @@ namespace ReviewsSite
 {
     public class MusicalController : Controller
     {
-        Musical musical = new Musical();
+        Musical musical = new Musical(1, "Wicked", "drama", "A tale of two friends who happen to be witches. Hijinks ensue.", 5, "It was a non-stop thrill-ride!!!");
         public ViewResult Index()
         {
             return View(musical);
