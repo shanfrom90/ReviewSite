@@ -8,5 +8,5 @@ namespace ReviewsSite
 {
     public class MusicalContext : DbContext
     {
-    }
+    } 
 }
