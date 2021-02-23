@@ -14,29 +14,40 @@ namespace ReviewsSite.Repository
         //{
         //    _db.Add(obj);
         //}
+        private MusicalContext _db;
+
+        public MusicalRepository(MusicalContext db)
+        {
+            this._db = db;
+        }
         public void Create(Musical obj)
         {
-            throw new NotImplementedException();
+            _db.Musicals.Add(obj);
+            _db.SaveChanges();
         }
 
         public void Delete(Musical obj)
         {
-            throw new NotImplementedException();
+            _db.Musicals.Remove(obj);
+            _db.SaveChanges();
         }
 
         public IEnumerable<Musical> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Musicals.ToList();
         }
 
         public Musical GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _db.Musicals.Find(id);
+
         }
 
         public void Update(Musical obj)
         {
-            throw new NotImplementedException();
+            _db.Musicals.Update(obj);
+            _db.SaveChanges();
+
         }
     }
 }
