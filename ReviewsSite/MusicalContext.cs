@@ -9,6 +9,7 @@ namespace ReviewsSite
 {
     public class MusicalContext : DbContext
     { public DbSet <Musical> Musicals { get; set; }
+      public DbSet<Review> Reviews { get; set; }
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=MusicTesting;Trusted_Connection=True;";
@@ -42,7 +43,23 @@ namespace ReviewsSite
                     Comment = "Razzle Dazzle!"
 
                 }
-                ) ; 
+                ) ;
+            modelBuilder.Entity<Review>().HasData(
+                new Review
+                {
+                    Id = 1,
+                    Content = "I had the time of my life my life!",
+                    Rating = 5,
+                    MusicalId = 1
+                },
+                new Review
+                {
+                    Id = 2,
+                    Content = "Wowza!",
+                    Rating = 4,
+                    MusicalId = 2
+                }
+                );
         }
     } 
 }
