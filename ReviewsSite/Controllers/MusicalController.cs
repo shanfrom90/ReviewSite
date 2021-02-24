@@ -22,5 +22,12 @@ namespace ReviewsSite
             var musicalList = musicalRepo.GetAll();
             return View(musicalList);
         }
+
+        public ViewResult Details(int id)
+        {
+            var musical = musicalRepo.GetByID(id);
+
+            return View(musical);
+        }
     }
 }

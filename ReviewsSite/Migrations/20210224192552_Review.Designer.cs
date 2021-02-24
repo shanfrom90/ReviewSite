@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(MusicalContext))]
-    partial class MusicalContextModelSnapshot : ModelSnapshot
+    [Migration("20210224192552_Review")]
+    partial class Review
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,60 +64,6 @@ namespace ReviewsSite.Migrations
                             Genre = "Drama",
                             Rating = 5,
                             Title = "Chicago"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Comment = "Amazing!",
-                            Description = "A tale of two friends who happen to be political rivals and founders of a nation. Hijinks ensue.",
-                            Genre = "Historical",
-                            Rating = 5,
-                            Title = "Hamilton"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Comment = "Inspirational!",
-                            Description = "A tale of the last days of Jesus. Hijinks ensue.",
-                            Genre = "Drama",
-                            Rating = 5,
-                            Title = "Jesus Christ Superstar"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Comment = "A roaring good time!",
-                            Description = "A tale of two brothers who happen to be lions. Hijinks ensue.",
-                            Genre = "Family",
-                            Rating = 5,
-                            Title = "The Lion King"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Comment = "Great!",
-                            Description = "A tale of roommates in the city. Hijinks ensue.",
-                            Genre = "Drama",
-                            Rating = 5,
-                            Title = "Rent"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Comment = "Don't go with your parents! There will be awkwardness.",
-                            Description = "A tale of two Mormons who happen to be missionaries. Hijinks really ensue.",
-                            Genre = "Comedy",
-                            Rating = 5,
-                            Title = "The Book of Mormon"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Comment = "Memories will be made! Purrfect!",
-                            Description = "A tale of many cats who happen to be magical. Hijinks ensue.",
-                            Genre = "Drama",
-                            Rating = 5,
-                            Title = "Cats"
                         });
                 });
 
