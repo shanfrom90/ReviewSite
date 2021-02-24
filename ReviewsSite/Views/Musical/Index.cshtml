@@ -19,7 +19,7 @@
 
     @foreach (var musical in Model)
     {
-    <h2>@musical.Title</h2>
+    <h2><a href="Musical/Details/@musical.Id">@musical.Title</a></h2>
     <ul>
         <li>Genre: @musical.Genre</li>
         <li>Description: @musical.Description</li>
