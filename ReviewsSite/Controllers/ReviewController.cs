@@ -19,8 +19,8 @@ namespace ReviewsSite.Controllers
 
         public ViewResult Index()
         {
-            var musicalList = reviewRepo.GetAll();
-            return View(musicalList);
+            var reviewList = reviewRepo.GetAll();
+            return View(reviewList);
         }
     }
 }
