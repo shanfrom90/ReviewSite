@@ -28,8 +28,9 @@ namespace ReviewsSite
         {
             services.AddMvc();
             services.AddDbContext<MusicalContext>();
-            services.AddScoped<IRepository<Musical>, MusicalRepository>();
-            services.AddScoped<IRepository<Review>, ReviewRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            //services.AddScoped<IRepository<Musical>, MusicalRepository>();
+            //services.AddScoped<IRepository<Review>, ReviewRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -27,8 +27,6 @@ namespace ReviewsSite
                     Title = "Wicked",
                     Genre = "Drama",
                     Description = "A tale of two friends who happen to be withces. Hijinks ensue.",
-                    Rating = 5 ,
-                    Comment = "It was a non-stop thrill ride!"
 
                 },
 
@@ -39,8 +37,6 @@ namespace ReviewsSite
                     Title = "Chicago" ,
                     Genre = "Drama",
                     Description = "A tale of two friends who happen to be prisoners. Hijinks ensue.",
-                    Rating = 5,
-                    Comment = "Razzle Dazzle!"
 
                 },
 
@@ -50,8 +46,6 @@ namespace ReviewsSite
                     Title = "Hamilton",
                     Genre = "Historical",
                     Description = "A tale of two friends who happen to be political rivals and founders of a nation. Hijinks ensue.",
-                    Rating = 5,
-                    Comment = "Amazing!"
 
                 },
 
@@ -61,8 +55,6 @@ namespace ReviewsSite
                     Title = "Jesus Christ Superstar",
                     Genre = "Drama",
                     Description = "A tale of the last days of Jesus. Hijinks ensue.",
-                    Rating = 5,
-                    Comment = "Inspirational!"
 
                 },
 
@@ -72,8 +64,6 @@ namespace ReviewsSite
                     Title = "The Lion King",
                     Genre = "Family",
                     Description = "A tale of two brothers who happen to be lions. Hijinks ensue.",
-                    Rating = 5,
-                    Comment = "A roaring good time!"
 
                 },
 
@@ -83,9 +73,6 @@ namespace ReviewsSite
                     Title = "Rent",
                     Genre = "Drama",
                     Description = "A tale of roommates in the city. Hijinks ensue.",
-                    Rating = 5,
-                    Comment = "Great!"
-
                 },
 
                 new Musical
@@ -94,8 +81,6 @@ namespace ReviewsSite
                     Title = "The Book of Mormon",
                     Genre = "Comedy",
                     Description = "A tale of two Mormons who happen to be missionaries. Hijinks really ensue.",
-                    Rating = 5,
-                    Comment = "Don't go with your parents! There will be awkwardness."
 
                 },
 
@@ -105,8 +90,6 @@ namespace ReviewsSite
                     Title = "Cats",
                     Genre = "Drama",
                     Description = "A tale of many cats who happen to be magical. Hijinks ensue.",
-                    Rating = 5,
-                    Comment = "Memories will be made! Purrfect!"
 
                 }
 
@@ -125,6 +108,71 @@ namespace ReviewsSite
                     Content = "Wowza!",
                     Rating = 4,
                     MusicalId = 2
+                },
+                new Review
+                {
+                    Id = 3,
+                    Rating = 4,
+                    MusicalId = 1,
+                    Content = "It was a non-stop thrill ride!"
+
+                },
+                new Review
+                {
+                    Id = 4,
+                    Rating = 4,
+                    MusicalId = 2,
+                    Content = "Razzle Dazzle!"
+
+                },
+
+                new Review
+                {
+                    Id = 5,
+                    Rating = 4,
+                    MusicalId = 4,
+                    Content = "Inspirational!"
+
+                },
+                new Review
+                {
+                    Id = 6,
+                    Rating = 4,
+                    MusicalId = 5,
+                    Content = "A roaring good time!"
+
+                },
+                new Review
+                {
+                    Id = 7,
+                    Rating = 4,
+                    MusicalId = 6,
+                    Content = "Great!"
+
+                },
+                new Review
+                {
+                    Id = 8,
+                    Rating = 4,
+                    MusicalId = 7,
+                    Content = "Don't go with your parents! There will be awkwardness."
+
+                },
+                new Review
+                {
+                    Id = 9,
+                    Rating = 4,
+                    MusicalId = 8,
+                    Content = "Memories will be made! Purrfect!"
+
+                },
+                new Review
+                {
+                    Id = 10,
+                    Rating = 4,
+                    MusicalId = 3,
+                    Content = "Amazing!"
+
                 }
                 );
         }
