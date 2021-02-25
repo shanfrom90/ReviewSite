@@ -22,6 +22,7 @@ namespace ReviewsSite.Controllers
             var reviewList = reviewRepo.GetAll();
             return View(reviewList);
         }
+
     }
 }
 

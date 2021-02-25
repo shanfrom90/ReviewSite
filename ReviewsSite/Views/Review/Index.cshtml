@@ -11,7 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Reviews</title>
-    <link rel="stylesheet" type="text/css" href="~/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
 </head>
 <body>
     @foreach (var review in Model)
@@ -20,6 +20,8 @@
         <p>@review.Content</p>
         <p>@review.Rating</p>
     }
+
+
     <p><a href="/Musical">Back to lobby</a></p>
 </body>
 </html>
