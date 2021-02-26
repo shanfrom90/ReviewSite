@@ -26,7 +26,8 @@ namespace ReviewsSite
                     Id = 1 ,
                     Title = "Wicked",
                     Genre = "Drama",
-                    Description = "A tale of two friends who happen to be withces. Hijinks ensue.",
+                    Description = "A tale of two friends who happen to be witches. Hijinks ensue.",
+                    Image = "/Images/wicked.jpeg"
 
                 },
 
@@ -37,6 +38,8 @@ namespace ReviewsSite
                     Title = "Chicago" ,
                     Genre = "Drama",
                     Description = "A tale of two friends who happen to be prisoners. Hijinks ensue.",
+                    Image = "/Images/Chicago.png"
+
 
                 },
 
@@ -46,6 +49,7 @@ namespace ReviewsSite
                     Title = "Hamilton",
                     Genre = "Historical",
                     Description = "A tale of two friends who happen to be political rivals and founders of a nation. Hijinks ensue.",
+                    Image = "/Images/hamilton.png"
 
                 },
 
@@ -55,6 +59,8 @@ namespace ReviewsSite
                     Title = "Jesus Christ Superstar",
                     Genre = "Drama",
                     Description = "A tale of the last days of Jesus. Hijinks ensue.",
+                    Image = "/Images/jcsuperstar.jpg"
+
 
                 },
 
@@ -64,6 +70,7 @@ namespace ReviewsSite
                     Title = "The Lion King",
                     Genre = "Family",
                     Description = "A tale of two brothers who happen to be lions. Hijinks ensue.",
+                    Image = "/Images/lionking3.png"
 
                 },
 
@@ -73,6 +80,8 @@ namespace ReviewsSite
                     Title = "Rent",
                     Genre = "Drama",
                     Description = "A tale of roommates in the city. Hijinks ensue.",
+                    Image = "/Images/rent.png"
+
                 },
 
                 new Musical
@@ -81,6 +90,7 @@ namespace ReviewsSite
                     Title = "The Book of Mormon",
                     Genre = "Comedy",
                     Description = "A tale of two Mormons who happen to be missionaries. Hijinks really ensue.",
+                    Image = "/Images/bookofmormon.jpeg"
 
                 },
 
@@ -90,6 +100,7 @@ namespace ReviewsSite
                     Title = "Cats",
                     Genre = "Drama",
                     Description = "A tale of many cats who happen to be magical. Hijinks ensue.",
+                    Image = "/Images/cats.jpg"
 
                 }
 
@@ -173,7 +184,39 @@ namespace ReviewsSite
                     MusicalId = 3,
                     Content = "Amazing!"
 
-                }
+                },
+                 new Review
+                 {
+                     Id = 11,
+                     Rating = 2,
+                     MusicalId = 5,
+                     Content = "Ive seen better"
+
+                 },
+                  new Review
+                  {
+                      Id = 12,
+                      Rating = 1,
+                      MusicalId = 7,
+                      Content = "I hate crowds!"
+
+                  },
+                   new Review
+                   {
+                       Id = 13,
+                       Rating = 3,
+                       MusicalId = 8,
+                       Content = "Sour Puss"
+
+                   },
+                    new Review
+                    {
+                        Id = 14,
+                        Rating = 2,
+                        MusicalId = 2,
+                        Content = "Chicag-NO!"
+
+                    }
                 );
         }
     } 

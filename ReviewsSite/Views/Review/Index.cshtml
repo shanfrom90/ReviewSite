@@ -14,14 +14,20 @@
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
 </head>
 <body>
-    @foreach (var review in Model)
-    {
-        <p>@review.Musical.Title</p>
-        <p>@review.Content</p>
-        <p>@review.Rating</p>
-    }
+    <h1>Current Reviews</h1>
+    <div>
+        @foreach (var review in Model)
+        {
+            <h2>@review.Musical.Title</h2>
+            @for (int i = 0; i < review.Rating; i++)
+            {
+                <img id="star" src="/Images/star.jpg" />
+            }
+            <p>@review.Content</p>
+        }
 
 
-    <p><a href="/Musical">Back to lobby</a></p>
+        <p><a href="/Musical">Back to lobby</a></p>
+    </div>
 </body>
 </html>

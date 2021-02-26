@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(MusicalContext))]
-    partial class MusicalContextModelSnapshot : ModelSnapshot
+    [Migration("20210226154803_FixedTypo")]
+    partial class FixedTypo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace ReviewsSite.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -47,7 +46,6 @@ namespace ReviewsSite.Migrations
                             Id = 1,
                             Description = "A tale of two friends who happen to be witches. Hijinks ensue.",
                             Genre = "Drama",
-                            Image = "/Images/wicked.jpeg",
                             Title = "Wicked"
                         },
                         new
@@ -55,7 +53,6 @@ namespace ReviewsSite.Migrations
                             Id = 2,
                             Description = "A tale of two friends who happen to be prisoners. Hijinks ensue.",
                             Genre = "Drama",
-                            Image = "/Images/Chicago.png",
                             Title = "Chicago"
                         },
                         new
@@ -63,7 +60,6 @@ namespace ReviewsSite.Migrations
                             Id = 3,
                             Description = "A tale of two friends who happen to be political rivals and founders of a nation. Hijinks ensue.",
                             Genre = "Historical",
-                            Image = "/Images/hamilton.png",
                             Title = "Hamilton"
                         },
                         new
@@ -71,7 +67,6 @@ namespace ReviewsSite.Migrations
                             Id = 4,
                             Description = "A tale of the last days of Jesus. Hijinks ensue.",
                             Genre = "Drama",
-                            Image = "/Images/jcsuperstar.jpg",
                             Title = "Jesus Christ Superstar"
                         },
                         new
@@ -79,7 +74,6 @@ namespace ReviewsSite.Migrations
                             Id = 5,
                             Description = "A tale of two brothers who happen to be lions. Hijinks ensue.",
                             Genre = "Family",
-                            Image = "/Images/lionking3.png",
                             Title = "The Lion King"
                         },
                         new
@@ -87,7 +81,6 @@ namespace ReviewsSite.Migrations
                             Id = 6,
                             Description = "A tale of roommates in the city. Hijinks ensue.",
                             Genre = "Drama",
-                            Image = "/Images/rent.png",
                             Title = "Rent"
                         },
                         new
@@ -95,7 +88,6 @@ namespace ReviewsSite.Migrations
                             Id = 7,
                             Description = "A tale of two Mormons who happen to be missionaries. Hijinks really ensue.",
                             Genre = "Comedy",
-                            Image = "/Images/bookofmormon.jpeg",
                             Title = "The Book of Mormon"
                         },
                         new
@@ -103,7 +95,6 @@ namespace ReviewsSite.Migrations
                             Id = 8,
                             Description = "A tale of many cats who happen to be magical. Hijinks ensue.",
                             Genre = "Drama",
-                            Image = "/Images/cats.jpg",
                             Title = "Cats"
                         });
                 });
@@ -200,34 +191,6 @@ namespace ReviewsSite.Migrations
                             Content = "Amazing!",
                             MusicalId = 3,
                             Rating = 4
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Content = "Ive seen better",
-                            MusicalId = 5,
-                            Rating = 2
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Content = "I hate crowds!",
-                            MusicalId = 7,
-                            Rating = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Content = "Sour Puss",
-                            MusicalId = 8,
-                            Rating = 3
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Content = "Chicag-NO!",
-                            MusicalId = 2,
-                            Rating = 2
                         });
                 });
 

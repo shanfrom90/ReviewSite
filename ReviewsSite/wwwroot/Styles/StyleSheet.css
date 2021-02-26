@@ -1,21 +1,51 @@
 ﻿*{
-    /*background-image:url(/Images/TheaterCurtains.png);*/
-    /*background-repeat:no-repeat;
-    background-size:cover;*/
+    background-image:url(/Images/TheaterCurtains.png);
+    background-repeat:no-repeat;
+    background-size:cover;
     text-align:center;
+    background-attachment: fixed;
+    font-family:Arial, Helvetica, sans-serif; 
 }
 
 body {
 }
+a {
+    text-decoration: none; 
+}
+a:hover {
+    color: goldenrod;
+}
+
+div{
+    background-color: white;
+}
+h1{
+    margin-top: 2em;
+    font-size:60px;
+   
+}
 
 h2,h3,p{
-    text-align:left;
+    text-align:center;
     padding-left:30%;
     padding-right:30%;
 }
 
 #ReviewTitle{
     text-align:center;
+    font-size:75px;
+}
+
+#star{
+    width:100px;
+}
+
+.StarScale{
+    width:150px;
+}
+
+#MusicalImage{
+    max-width:200px;
 }
 
 

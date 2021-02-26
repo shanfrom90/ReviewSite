@@ -15,13 +15,52 @@
 </head>
 <body>
     <h2 id="ReviewTitle">@Model.Title</h2>
+    <img id="MusicalImage" src=@Model.Image>
     <p>Synopsis: @Model.Description</p>
+    @*@switch (Model.Title)
+        {
+            case "Hamilton":
+                <img class="MusicalImage" src="/Images/hamilton.png" />
+                break;
+
+            default:
+                break;
+        }*@
 
     <h3>Reviews:</h3>
     @foreach (var review in Model.Reviews)
     {
         <hr />
-        <p>@review.Rating stars!</p>
+        @*<p>@review.Rating stars!</p>*@
+        @*@for (int i = 0; i < review.Rating; i++)
+            {
+               <img id="star" src="/Images/star.jpg"/>
+             }*@
+
+        @switch (review.Rating)
+        {
+            case 0:
+                <img class="StarScale" src="/Images/EmptyStars.png" />
+                break;
+            case 1:
+                <img class="StarScale" src="/Images/OneStar.png" />
+                break;
+            case 2:
+                <img class="StarScale" src="/Images/TwoStars.png" />
+                break;
+            case 3:
+                <img class="StarScale" src="/Images/ThreeStars.png" />
+                break;
+            case 4:
+                <img class="StarScale" src="/Images/FourStars.png" />
+                break;
+            case 5:
+                <img class="StarScale" src="/Images/FiveStars.png" />
+                break;
+            default:
+                break;
+        }
+
         <p>@review.Content</p>
     }
 

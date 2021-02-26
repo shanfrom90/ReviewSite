@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(MusicalContext))]
-    partial class MusicalContextModelSnapshot : ModelSnapshot
+    [Migration("20210226170213_UpdatedImageNames")]
+    partial class UpdatedImageNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -200,34 +202,6 @@ namespace ReviewsSite.Migrations
                             Content = "Amazing!",
                             MusicalId = 3,
                             Rating = 4
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Content = "Ive seen better",
-                            MusicalId = 5,
-                            Rating = 2
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Content = "I hate crowds!",
-                            MusicalId = 7,
-                            Rating = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Content = "Sour Puss",
-                            MusicalId = 8,
-                            Rating = 3
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Content = "Chicag-NO!",
-                            MusicalId = 2,
-                            Rating = 2
                         });
                 });
 

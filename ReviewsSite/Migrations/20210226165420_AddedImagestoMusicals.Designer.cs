@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(MusicalContext))]
-    partial class MusicalContextModelSnapshot : ModelSnapshot
+    [Migration("20210226165420_AddedImagestoMusicals")]
+    partial class AddedImagestoMusicals
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +73,7 @@ namespace ReviewsSite.Migrations
                             Id = 4,
                             Description = "A tale of the last days of Jesus. Hijinks ensue.",
                             Genre = "Drama",
-                            Image = "/Images/jcsuperstar.jpg",
+                            Image = "/Images/jc superstar.jpg",
                             Title = "Jesus Christ Superstar"
                         },
                         new
@@ -79,7 +81,7 @@ namespace ReviewsSite.Migrations
                             Id = 5,
                             Description = "A tale of two brothers who happen to be lions. Hijinks ensue.",
                             Genre = "Family",
-                            Image = "/Images/lionking3.png",
+                            Image = "/Images/lion king3.png",
                             Title = "The Lion King"
                         },
                         new
@@ -95,7 +97,7 @@ namespace ReviewsSite.Migrations
                             Id = 7,
                             Description = "A tale of two Mormons who happen to be missionaries. Hijinks really ensue.",
                             Genre = "Comedy",
-                            Image = "/Images/bookofmormon.jpeg",
+                            Image = "/Images/book of mormon.jpeg",
                             Title = "The Book of Mormon"
                         },
                         new
@@ -200,34 +202,6 @@ namespace ReviewsSite.Migrations
                             Content = "Amazing!",
                             MusicalId = 3,
                             Rating = 4
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Content = "Ive seen better",
-                            MusicalId = 5,
-                            Rating = 2
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Content = "I hate crowds!",
-                            MusicalId = 7,
-                            Rating = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Content = "Sour Puss",
-                            MusicalId = 8,
-                            Rating = 3
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Content = "Chicag-NO!",
-                            MusicalId = 2,
-                            Rating = 2
                         });
                 });
 
