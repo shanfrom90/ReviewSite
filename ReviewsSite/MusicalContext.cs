@@ -184,7 +184,39 @@ namespace ReviewsSite
                     MusicalId = 3,
                     Content = "Amazing!"
 
-                }
+                },
+                 new Review
+                 {
+                     Id = 11,
+                     Rating = 2,
+                     MusicalId = 5,
+                     Content = "Ive seen better"
+
+                 },
+                  new Review
+                  {
+                      Id = 12,
+                      Rating = 1,
+                      MusicalId = 7,
+                      Content = "I hate crowds!"
+
+                  },
+                   new Review
+                   {
+                       Id = 13,
+                       Rating = 3,
+                       MusicalId = 8,
+                       Content = "Sour Puss"
+
+                   },
+                    new Review
+                    {
+                        Id = 14,
+                        Rating = 2,
+                        MusicalId = 2,
+                        Content = "Chicag-NO!"
+
+                    }
                 );
         }
     } 
