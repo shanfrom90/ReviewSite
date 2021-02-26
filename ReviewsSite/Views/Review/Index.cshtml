@@ -16,9 +16,12 @@
 <body>
     @foreach (var review in Model)
     {
-        <p>@review.Musical.Title</p>
+        @for (int i = 0; i < review.Rating; i++)
+        {
+            <img id="star" src="/Images/star.jpg" />
+        }
+        <h2>@review.Musical.Title</h2>
         <p>@review.Content</p>
-        <p>@review.Rating</p>
     }
 
 

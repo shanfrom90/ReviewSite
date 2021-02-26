@@ -26,7 +26,7 @@ namespace ReviewsSite
                     Id = 1 ,
                     Title = "Wicked",
                     Genre = "Drama",
-                    Description = "A tale of two friends who happen to be withces. Hijinks ensue.",
+                    Description = "A tale of two friends who happen to be witches. Hijinks ensue.",
 
                 },
 

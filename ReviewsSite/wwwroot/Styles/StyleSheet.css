@@ -1,11 +1,13 @@
 ﻿*{
-    /*background-image:url(/Images/TheaterCurtains.png);*/
-    /*background-repeat:no-repeat;
-    background-size:cover;*/
+    background-image:url(/Images/TheaterCurtains.png);
+    background-repeat:no-repeat;
+    background-size:cover;
     text-align:center;
+    background-attachment: fixed;
 }
 
 body {
+    background-color: grey;
 }
 
 h2,h3,p{
@@ -16,6 +18,14 @@ h2,h3,p{
 
 #ReviewTitle{
     text-align:center;
+}
+
+#star{
+    width:100px;
+}
+
+.StarScale{
+    width:150px;
 }
 
 
