@@ -1,11 +1,13 @@
-﻿using System;
+﻿using ReviewsSite.Extensions;
+using ReviewsSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ReviewsSite.Repository
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> : ISelectList where T : class
     {
         void Create(T obj);
 
@@ -16,6 +18,7 @@ namespace ReviewsSite.Repository
         T GetByID(int id);
 
         void Delete(T obj);
-        
+
+
     }
 }

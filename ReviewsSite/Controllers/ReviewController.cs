@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ReviewsSite.Models;
 using ReviewsSite.Repository;
 using System;
@@ -23,6 +24,28 @@ namespace ReviewsSite.Controllers
             return View(reviewList);
         }
 
+        public ViewResult Create()
+        {
+            var musicalList = reviewRepo.PopulateMusicalList();
+
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+
+            return View(new Review());
+        }
+
+        [HttpPost]
+        public ViewResult Create(Review model)
+        {
+            var musicalList = reviewRepo.PopulateMusicalList();
+
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+
+            reviewRepo.Create(model);
+
+            ViewBag.Result = "Your review has been added.";
+
+            return View(model);
+        }
     }
 }
 
