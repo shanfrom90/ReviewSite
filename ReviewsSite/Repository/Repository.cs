@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ReviewsSite.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ReviewsSite.Repository
@@ -38,6 +39,11 @@ namespace ReviewsSite.Repository
             _db.Set<T>().Update(obj);
             _db.SaveChanges();
 
+        }
+
+         public List<Musical> PopulateMusicalList()
+        {
+            return _db.Set<Musical>().ToList();
         }
     }
 }
