@@ -30,7 +30,7 @@ namespace ReviewsSite.Controllers
 
             ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
 
-            return View(new Review());
+            return View(new Review(){ Rating = 1 });
         }
 
         [HttpPost]
@@ -44,6 +44,28 @@ namespace ReviewsSite.Controllers
 
             ViewBag.Result = "Your review has been added.";
 
+            return View(model);
+        }
+        public ActionResult Delete(int id)
+        {
+            var review = reviewRepo.GetByID(id);
+            reviewRepo.Delete(review);
+            return RedirectToAction("Index");
+        }
+        public ViewResult Update(int id)
+        {
+            var review = reviewRepo.GetByID(id);
+            var musicalList = reviewRepo.PopulateMusicalList();
+
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            return View(review);
+        }
+        [HttpPost]
+        public ViewResult Update(Review model)
+        {
+            var musicalList = reviewRepo.PopulateMusicalList();
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            reviewRepo.Update(model);
             return View(model);
         }
     }

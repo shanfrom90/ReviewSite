@@ -14,32 +14,28 @@
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css"/>
 </head>
 <body>
-    <h1>Welcome to the Musical Theatre Review Site!</h1>
-    <p>This is the one-stop site for all of your musical theatre nonsense!</p>
+    <nav>
+        <ul>
+            <li><a href="/Musical/">Lobby</a></li>
+            <li><a href="/Review/">Reviews</a></li>
+            <li><a href="/Review/Create/">Submit Review</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Broadway Revue</h1>
+        <p id="subtitle">This is the one-stop site for all of your musical theatre nonsense!</p>
+    </header>
+    <main>
 
-    @foreach (var musical in Model)
-    {
-    <h2><a href="Musical/Details/@musical.Id">@musical.Title</a></h2>
+        @foreach (var musical in Model)
+        {
+            <h2><a href="/Musical/Details/@musical.Id">@musical.Title</a></h2>
 
-    <p>Genre: @musical.Genre</p>
-
-
-    }
-
-    <p><a href="Review/Create">Leave a Review</a></p>
-    <h2><a href="/Review/">Our Reviews</a></h2>
-        <section>
-            
-            <p>Chicago</p>
-            <p>Wicked</p>
-            <p>Hamilton</p>
-            <p>Rent</p>
-            <p>Cats</p>
-            <p>Jesus Christ Superstar</p>
-            <p>The Book of Mormon</p>
-            <p>The Lion King</p>
-            
-        </section>
-    <p>Submit your own reviews!</p>
+            <p>Genre: @musical.Genre</p>
+            <hr />
+        }
+        <h2><a href="/Review/">Our Reviews</a></h2>
+        <p><a href="/Review/Create">Submit your own review!</a></p>
+    </main>
 </body>
 </html>
