@@ -52,6 +52,22 @@ namespace ReviewsSite.Controllers
             reviewRepo.Delete(review);
             return RedirectToAction("Index");
         }
+        public ViewResult Update(int id)
+        {
+            var review = reviewRepo.GetByID(id);
+            var musicalList = reviewRepo.PopulateMusicalList();
+
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            return View(review);
+        }
+        [HttpPost]
+        public ViewResult Update(Review model)
+        {
+            var musicalList = reviewRepo.PopulateMusicalList();
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            reviewRepo.Update(model);
+            return View(model);
+        }
     }
 }
 
