@@ -21,19 +21,21 @@
             <li><a href="/Review/Create/">Submit Review</a></li>
         </ul>
     </nav>
+    <header>
+        <h1>Broadway Revue</h1>
+        <p id="subtitle">This is the one-stop site for all of your musical theatre nonsense!</p>
+    </header>
     <main>
-        <h1>Welcome to the Musical Theatre Review Site!</h1>
-        <p>This is the one-stop site for all of your musical theatre nonsense!</p>
 
         @foreach (var musical in Model)
         {
-            <h2><a href="Musical/Details/@musical.Id">@musical.Title</a></h2>
+            <h2><a href="/Musical/Details/@musical.Id">@musical.Title</a></h2>
 
             <p>Genre: @musical.Genre</p>
             <hr />
         }
         <h2><a href="/Review/">Our Reviews</a></h2>
-        <p><a href="Review/Create">Submit your own review!</a></p>
+        <p><a href="/Review/Create">Submit your own review!</a></p>
     </main>
 </body>
 </html>
