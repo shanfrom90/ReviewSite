@@ -14,38 +14,45 @@
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="/Musical/">Lobby</a></li>
+            <li><a href="/Review/">Reviews</a></li>
+            <li><a href="/Review/Create/">Submit Review</a></li>
+        </ul>
+    </nav>
+    <header><h1>Review</h1></header>
+    <main>
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" class="form-control" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Rating" class="control-label"></label>
+                        <input asp-for="Rating" min="1" max="5" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MusicalId" class="control-label"></label>
+                        <select asp-for="MusicalId" class="form-control" asp-items="ViewBag.Musicals"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+                <div class="text-success">@ViewBag.Result</div>
+            </div>
+        </div>
 
-<h2>Review</h2>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" min="1" max="5" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MusicalId" class="control-label"></label>
-                <select asp-for="MusicalId" class="form-control" asp-items="ViewBag.Musicals"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-        <div class="text-success">@ViewBag.Result</div>
-    </div>
-</div>
-
-<div>
-    <a href="/Musical">Back to lobby</a>
-</div>
+        <div>
+            <a href="/Musical">Back to lobby</a>
+        </div>
+    </main>
 
 </body>
 </html>

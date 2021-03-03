@@ -30,7 +30,7 @@ namespace ReviewsSite.Controllers
 
             ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
 
-            return View(new Review());
+            return View(new Review(){ Rating = 1 });
         }
 
         [HttpPost]
