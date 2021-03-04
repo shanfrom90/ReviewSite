@@ -32,6 +32,10 @@ namespace ReviewsSite
 
         public ViewResult Create()
         {
+            List<string> listOfGenres = new List<string> {"Family", "Drama", "Comedy", "Historical" };
+
+            ViewBag.Genres = listOfGenres;
+
             return View(new Musical());
         }
 
