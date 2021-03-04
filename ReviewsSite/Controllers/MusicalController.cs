@@ -30,5 +30,20 @@ namespace ReviewsSite
             return View(musical);
         }
 
+        public ViewResult Create()
+        {
+            return View(new Musical());
+        }
+
+        [HttpPost]
+        public ViewResult Create(Musical model)
+        {
+            musicalRepo.Create(model);
+
+            ViewBag.Result = "Your musical has been added.";
+
+            return View(model);
+        }
+
     }
 }

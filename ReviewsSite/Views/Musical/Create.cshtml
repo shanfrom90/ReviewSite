@@ -1,5 +1,5 @@
-﻿@model ReviewsSite.Models.Review
-@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers 
+﻿@model ReviewsSite.Models.Musical
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     Layout = null;
@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Leave a Review</title>
+    <title>Create</title>
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
 </head>
 <body>
@@ -22,26 +22,35 @@
             <li><a href="/Musical/Create/">Add a Musical</a></li>
         </ul>
     </nav>
-    <header><h1>Review</h1></header>
+    <header>
+        <h1>Add a Musical</h1>
+    </header>
     <main>
+
+
         <div class="row">
             <div class="col-md-4">
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label asp-for="Content" class="control-label"></label>
-                        @*<input asp-for="Content" class="form-control" />*@
-                        <textarea  asp-for="Content" class="form-control" rows="2" cols="50"></textarea>
-                        <span asp-validation-for="Content" class="text-danger"></span>
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Rating" class="control-label"></label>
-                        <input asp-for="Rating" min="1" max="5" class="form-control" />
-                        <span asp-validation-for="Rating" class="text-danger"></span>
+                        <label asp-for="Genre" class="control-label"></label>
+                        <input asp-for="Genre" class="form-control" />
+                        <span asp-validation-for="Genre" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="MusicalId" class="control-label"></label>
-                        <select asp-for="MusicalId" class="form-control" asp-items="ViewBag.Musicals"></select>
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image" class="control-label"></label>
+                        <input asp-for="Image" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Create" class="btn btn-primary" />
@@ -55,6 +64,5 @@
             <a href="/Musical">Back to lobby</a>
         </div>
     </main>
-
 </body>
 </html>
