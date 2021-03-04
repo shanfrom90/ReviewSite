@@ -45,5 +45,12 @@ namespace ReviewsSite
             return View(model);
         }
 
+        public ActionResult Delete(int id)
+        {
+            var musical = musicalRepo.GetByID(id);
+            musicalRepo.Delete(musical);
+            return RedirectToAction("Index");
+        }
+
     }
 }
