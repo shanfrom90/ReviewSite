@@ -13,6 +13,13 @@ namespace ReviewsSite.Controllers
     {
         IRepository<Review> reviewRepo;
 
+        private void ListOfMusicals()
+        {
+            var musicalList = reviewRepo.PopulateMusicalList();
+
+            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+        }
+
         public ReviewController(IRepository<Review> reviewRepo)
         {
             this.reviewRepo = reviewRepo;
@@ -26,9 +33,11 @@ namespace ReviewsSite.Controllers
 
         public ViewResult Create()
         {
-            var musicalList = reviewRepo.PopulateMusicalList();
+            //var musicalList = reviewRepo.PopulateMusicalList();
 
-            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            //ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+
+            ListOfMusicals();
 
             return View(new Review(){ Rating = 1 });
         }
@@ -36,9 +45,11 @@ namespace ReviewsSite.Controllers
         [HttpPost]
         public ViewResult Create(Review model)
         {
-            var musicalList = reviewRepo.PopulateMusicalList();
+            //var musicalList = reviewRepo.PopulateMusicalList();
 
-            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            //ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+
+            ListOfMusicals();
 
             reviewRepo.Create(model);
 

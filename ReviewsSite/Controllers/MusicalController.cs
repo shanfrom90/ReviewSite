@@ -12,6 +12,13 @@ namespace ReviewsSite
     {
         IRepository<Musical> musicalRepo;
 
+        private void ListOfGenres()
+        {
+            List<string> listOfGenres = new List<string> { "Family", "Drama", "Comedy", "Historical" };
+
+            ViewBag.Genres = listOfGenres;
+        }
+
         public MusicalController(IRepository<Musical> musicalRepo)
         {
             this.musicalRepo = musicalRepo;
@@ -32,9 +39,11 @@ namespace ReviewsSite
 
         public ViewResult Create()
         {
-            List<string> listOfGenres = new List<string> {"Family", "Drama", "Comedy", "Historical" };
+            //List<string> listOfGenres = new List<string> {"Family", "Drama", "Comedy", "Historical" };
 
-            ViewBag.Genres = listOfGenres;
+            //ViewBag.Genres = listOfGenres;
+
+            ListOfGenres();
 
             return View(new Musical());
         }
@@ -42,9 +51,11 @@ namespace ReviewsSite
         [HttpPost]
         public ViewResult Create(Musical model)
         {
-            List<string> listOfGenres = new List<string> { "Family", "Drama", "Comedy", "Historical" };
+            //List<string> listOfGenres = new List<string> { "Family", "Drama", "Comedy", "Historical" };
 
-            ViewBag.Genres = listOfGenres;
+            //ViewBag.Genres = listOfGenres;
+
+            ListOfGenres();
 
             if (musicalRepo.FindMusicalByTitle(model.Title) != null)
             {
