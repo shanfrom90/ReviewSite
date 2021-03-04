@@ -13,10 +13,24 @@ namespace ReviewsSite.Models
         public string Description { get; set; }
 
         public string Image { get; set; }
-        //public int Rating { get; set; }
-        //public string Comment { get; set; }
-        //public int ReviewId { get; set; }
-        //public virtual Review Review { get; set; }
+        //{
+        //    get
+        //    {
+        //        if (Image == null)
+        //        {
+        //            Image = "DefaultTheatre.jpg";
+        //            return Image;
+        //        }
+        //        else
+        //        {
+        //            return Image;
+        //        }
+        //    }
+        //    set
+        //    {
+        //        Image = value;
+        //    }
+        //}
 
         public virtual ICollection<Review> Reviews { get; set; }
 
@@ -30,8 +44,6 @@ namespace ReviewsSite.Models
             Title = title;
             Genre = genre;
             Description = description;
-            //Rating = rating;
-            //Comment = comment;
         }
     }
    
