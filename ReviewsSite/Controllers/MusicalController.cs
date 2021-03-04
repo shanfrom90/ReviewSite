@@ -12,6 +12,13 @@ namespace ReviewsSite
     {
         IRepository<Musical> musicalRepo;
 
+        private void ListOfGenres()
+        {
+            List<string> listOfGenres = new List<string> { "Family", "Drama", "Comedy", "Historical" };
+
+            ViewBag.Genres = listOfGenres;
+        }
+
         public MusicalController(IRepository<Musical> musicalRepo)
         {
             this.musicalRepo = musicalRepo;
@@ -28,6 +35,48 @@ namespace ReviewsSite
             var musical = musicalRepo.GetByID(id);
 
             return View(musical);
+        }
+
+        public ViewResult Create()
+        {
+            //List<string> listOfGenres = new List<string> {"Family", "Drama", "Comedy", "Historical" };
+
+            //ViewBag.Genres = listOfGenres;
+
+            ListOfGenres();
+
+            return View(new Musical());
+        }
+
+        [HttpPost]
+        public ViewResult Create(Musical model)
+        {
+            //List<string> listOfGenres = new List<string> { "Family", "Drama", "Comedy", "Historical" };
+
+            //ViewBag.Genres = listOfGenres;
+
+            ListOfGenres();
+
+            if (musicalRepo.FindMusicalByTitle(model.Title) != null)
+            {
+  
+                ViewBag.Error = "This musical already exists.";
+
+                return View(new Musical());
+            }
+
+            musicalRepo.Create(model);
+
+            ViewBag.Result = "Your musical has been added.";
+
+            return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var musical = musicalRepo.GetByID(id);
+            musicalRepo.Delete(musical);
+            return RedirectToAction("Index");
         }
 
     }

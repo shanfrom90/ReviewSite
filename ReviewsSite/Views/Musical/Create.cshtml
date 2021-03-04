@@ -1,0 +1,72 @@
+﻿@model ReviewsSite.Models.Musical
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/Musical/">Lobby</a></li>
+            <li><a href="/Review/">Reviews</a></li>
+            <li><a href="/Review/Create/">Submit Review</a></li>
+            <li><a href="/Musical/Create/">Add a Musical</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Add a Musical</h1>
+    </header>
+    <main>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Genre" class="control-label"></label>
+                        <select asp-for="Genre" class="form-control" asp-items="@(new SelectList(ViewBag.Genres))">
+                            <option disabled selected>--- SELECT ---</option>
+                        </select>
+                        <span asp-validation-for="Genre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        Copy a link to an image of your choice, if you have one.
+                        <label asp-for="Image" class="control-label"></label>
+                        <input asp-for="Image" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+                <div class="text-danger">@ViewBag.Error</div>
+                <div class="text-success">@ViewBag.Result</div>
+            </div>
+        </div>
+
+        <div>
+            <a href="/Musical">Back to lobby</a>
+        </div>
+    </main>
+</body>
+</html>
