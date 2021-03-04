@@ -45,5 +45,12 @@ namespace ReviewsSite.Repository
         {
             return _db.Set<Musical>().ToList();
         }
+
+        public Musical FindMusicalByTitle(string title)
+        {
+            var musical = _db.Set<Musical>().Where(m => m.Title == title).FirstOrDefault();
+
+            return musical;
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace ReviewsSite.Extensions
     public interface ISelectList
     {
         List<Musical> PopulateMusicalList();
+
+        Musical FindMusicalByTitle(string title);
     }
 }

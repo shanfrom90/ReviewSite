@@ -38,6 +38,14 @@ namespace ReviewsSite
         [HttpPost]
         public ViewResult Create(Musical model)
         {
+            if (musicalRepo.FindMusicalByTitle(model.Title) != null)
+            {
+  
+                ViewBag.Error = "This musical already exists.";
+
+                return View(new Musical());
+            }
+
             musicalRepo.Create(model);
 
             ViewBag.Result = "Your musical has been added.";
