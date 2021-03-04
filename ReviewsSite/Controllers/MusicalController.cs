@@ -42,6 +42,10 @@ namespace ReviewsSite
         [HttpPost]
         public ViewResult Create(Musical model)
         {
+            List<string> listOfGenres = new List<string> { "Family", "Drama", "Comedy", "Historical" };
+
+            ViewBag.Genres = listOfGenres;
+
             if (musicalRepo.FindMusicalByTitle(model.Title) != null)
             {
   
