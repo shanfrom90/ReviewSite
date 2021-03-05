@@ -16,5 +16,19 @@ namespace ReviewsSite.Models
         public virtual Musical Musical { get; set; }
         [Display (Name = "Select Musical")]
         public int MusicalId { get; set; }
+    
+    
+   public Review(string content, int rating)
+        {
+            Content = content;
+            Rating = rating;
+        }
+
+    public Review()
+        {
+
+        }
     }
+
+    
 }

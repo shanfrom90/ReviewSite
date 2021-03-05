@@ -68,15 +68,16 @@ namespace ReviewsSite.Controllers
             var review = reviewRepo.GetByID(id);
             var musicalList = reviewRepo.PopulateMusicalList();
 
-            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            ViewBag.Musicals = musicalList;
             return View(review);
         }
         [HttpPost]
         public ViewResult Update(Review model)
         {
             var musicalList = reviewRepo.PopulateMusicalList();
-            ViewBag.Musicals = new SelectList(musicalList, "Id", "Title");
+            ViewBag.Musicals = musicalList;
             reviewRepo.Update(model);
+            ViewBag.Result = "You have successfully updated this review.";
             return View(model);
         }
     }
