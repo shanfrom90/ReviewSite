@@ -37,18 +37,19 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Rating" class="control-label"></label>
-                        <input asp-for="Rating" class="form-control" />
+                        <input asp-for="Rating" min="1" max="5" class="form-control" />
                         <span asp-validation-for="Rating" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="MusicalId" class="control-label"></label>
-                        <select asp-for="MusicalId" class="form-control" asp-items="ViewBag.Musicals"></select>
+                        <select asp-for="MusicalId" class="form-control" asp-items="@(new SelectList(ViewBag.Musicals, "Id", "Title"))"></select>
                         <span asp-validation-for="MusicalId" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Save" class="btn btn-primary" />
                     </div>
                 </form>
+                <div class="text-success">@ViewBag.Result</div>
             </div>
         </div>
 
