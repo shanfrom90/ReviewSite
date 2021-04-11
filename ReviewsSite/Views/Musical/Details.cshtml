@@ -1,0 +1,83 @@
+﻿@model ReviewsSite.Models.Musical
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/Musical/">Lobby</a></li>
+            <li><a href="/Review/">Reviews</a></li>
+            <li><a href="/Review/Create/">Submit Review</a></li>
+            <li><a href="/Musical/Create/">Add a Musical</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 id="ReviewTitle">@Model.Title</h1>
+    </header>
+    <main>
+        <img id="MusicalImage" src=@Model.Image>
+        <p>Synopsis: @Model.Description</p>
+        @*@switch (Model.Title)
+        {
+            case "Hamilton":
+                <img class="MusicalImage" src="/Images/hamilton.png" />
+                break;
+
+            default:
+                break;
+        }*@
+
+        <h3>Reviews:</h3>
+        @foreach (var review in Model.Reviews)
+        {
+            <hr />
+            @*<p>@review.Rating stars!</p>*@
+            @*@for (int i = 0; i < review.Rating; i++)
+            {
+               <img id="star" src="/Images/star.jpg"/>
+             }*@
+
+            @switch (review.Rating)
+            {
+                case 0:
+                    <img class="StarScale" src="/Images/EmptyStars.png" />
+                    break;
+                case 1:
+                    <img class="StarScale" src="/Images/OneStar.png" />
+                    break;
+                case 2:
+                    <img class="StarScale" src="/Images/TwoStars.png" />
+                    break;
+                case 3:
+                    <img class="StarScale" src="/Images/ThreeStars.png" />
+                    break;
+                case 4:
+                    <img class="StarScale" src="/Images/FourStars.png" />
+                    break;
+                case 5:
+                    <img class="StarScale" src="/Images/FiveStars.png" />
+                    break;
+                default:
+                    break;
+            }
+
+            <p>@review.Content</p>
+            <p><a href="/Review/Update/@review.Id">Edit Review</a></p>
+            <p><a href="/Review/Delete/@review.Id">Delete Review</a></p>
+        }
+
+        <p><a href="/Musical">Back to lobby</a></p>
+    </main>
+</body>
+</html>

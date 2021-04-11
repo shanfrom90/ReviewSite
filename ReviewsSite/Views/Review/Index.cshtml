@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ReviewsSite.Models.Review>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reviews</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+</head>
+<body id="ReviewBody">
+    <nav>
+        <ul>
+            <li><a href="/Musical/">Lobby</a></li>
+            <li><a href="/Review/">Reviews</a></li>
+            <li><a href="/Review/Create/">Submit Review</a></li>
+            <li><a href="/Musical/Create/">Add a Musical</a></li>
+        </ul>
+    </nav>
+    <header><h1>Current Reviews</h1></header>
+    <main>
+        <div>
+            @foreach (var review in Model)
+            {
+                <h2>@review.Musical.Title</h2>
+                @for (int i = 0; i < review.Rating; i++)
+                {
+                    <img id="star" src="/Images/star.jpg" />
+                }
+                <p>@review.Content</p>
+                <p><a href="/Review/Update/@review.Id">Edit Review</a></p>
+                <p><a href="/Review/Delete/@review.Id">Delete Review</a></p>
+            }
+            <p><a href="/Musical">Back to lobby</a></p>
+        </div>
+    </main>
+</body>
+</html>
